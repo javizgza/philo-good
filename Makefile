@@ -16,6 +16,8 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+DBUG = -fsanitize=leak -Og -g2
+
 SRCS = main.c ft_start.c ft_start_utils.c ft_time_utils.c ft_simple_utils.c ft_table.c ft_clean.c ft_table_utils.c
 
 OBJS = $(SRCS:.c=.o)
@@ -23,7 +25,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(DBUG)
 
 clean:
 	rm -f $(OBJS)
@@ -32,3 +34,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY:		all clean fclean re

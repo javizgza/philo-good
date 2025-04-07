@@ -55,12 +55,12 @@ void    ft_death(t_philo *philos, t_data *data)
 t_philo    ft_struct_philo(t_data *data, int who)
 {
     t_philo philo;
-    philo.id = who;
+    philo.print = data->print;
     philo.philos = data->philos;
+    philo.id = who;
     philo.left_fork = &data->forks[who];
     philo.stop = 0;
     philo.times_eaten = 0;
-    philo.print = data->print;
     philo.data = data;
     return (philo);
 }
