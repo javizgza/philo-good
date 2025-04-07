@@ -12,19 +12,20 @@
 
 #include "philo.h"
 
-void    ft_cleanup(t_philo *philos)
+void	ft_cleanup(t_philo *philos)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    while (i < philos->data->philos)
-    {
-        pthread_join(philos[i].thread, NULL);
-        pthread_mutex_destroy(philos[i].left_fork);
-        pthread_mutex_destroy(philos[i].right_fork);
-        i++;
-    }
-    pthread_mutex_destroy(philos->print);
-    free(philos->print);
-    free(philos);
+	i = 0;
+	while (i < philos->data->philos)
+	{
+		pthread_join(philos[i].thread, NULL);
+		pthread_mutex_destroy(philos[i].left_fork);
+		pthread_mutex_destroy(philos[i].right_fork);
+		i++;
+	}
+	pthread_mutex_destroy(philos->print);
+	free(philos->left_fork);
+	free(philos->print);
+	free(philos);
 }

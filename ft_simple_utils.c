@@ -20,7 +20,7 @@ int	ft_check_all_args(char **argv)
 		return (1);
 	}
 	if (ft_mini_atoi(argv[2]) <= 0 || ft_check_if_num(argv[2]) == 1)
-	{	
+	{
 		write(2, "Error in time to die.\n", 23);
 		return (1);
 	}
@@ -30,19 +30,19 @@ int	ft_check_all_args(char **argv)
 		return (1);
 	}
 	if (ft_mini_atoi(argv[4]) <= 0 || ft_check_if_num(argv[4]) == 1)
-	{	
+	{
 		write(2, "Error in time to sleep.\n", 25);
 		return (1);
 	}
 	if (argv[5] && (ft_mini_atoi(argv[5]) <= 0 || ft_check_if_num(argv[5]) == 1))
-	{	
+	{
 		write(2, "Error in number os meals for each philo.\n", 41);
 		return (1);
 	}
 	return (0);
 }
 
-int ft_check_if_num(char *str)
+int	ft_check_if_num(char *str)
 {
 	int	i;
 
@@ -56,10 +56,10 @@ int ft_check_if_num(char *str)
 	return (0);
 }
 
-int ft_mini_atoi(char *str)
+int	ft_mini_atoi(char *str)
 {
-    int res;
-    
+	int	res;
+
 	res = 0;
 	while (*str >= '0' && *str <= '9')
 	{

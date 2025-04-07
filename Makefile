@@ -16,9 +16,11 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+SRCS = main.c ft_start.c ft_start_utils.c ft_time_utils.c ft_simple_utils.c ft_table.c ft_clean.c ft_table_utils.c
+
 DBUG = -fsanitize=leak -Og -g2
 
-SRCS = main.c ft_start.c ft_start_utils.c ft_time_utils.c ft_simple_utils.c ft_table.c ft_clean.c ft_table_utils.c
+LIB 			= -lpthread
 
 OBJS = $(SRCS:.c=.o)
 

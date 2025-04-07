@@ -12,14 +12,14 @@
 
 #include "philo.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_data data;
-    
-    if (argc == 5 || argc == 6)
-    {
-        ft_start_philosophers(&data, argv);
-        ft_start_program(&data);
-    }
-    return (0);
+	t_data	data;
+
+	if (argc == 5 || argc == 6)
+	{
+		ft_start_philosophers(&data, argv);
+		ft_start_program(&data);
+	}
+	return (0);
 }
