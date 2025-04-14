@@ -26,6 +26,7 @@ void	ft_cleanup(t_philo *philos)
 	}
 	pthread_mutex_destroy(philos->print);
 	free(philos->left_fork);
+	free(philos->right_fork);
 	free(philos->print);
 	free(philos);
 }

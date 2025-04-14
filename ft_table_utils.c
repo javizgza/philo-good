@@ -53,8 +53,6 @@ void	ft_step(t_philo *philo)
 {
 	philo->start_time = ft_time();
 	philo->last_meal_time = philo->start_time;
-	if (philo->id % 2 != 0)
-		usleep(50000);
 	if (philo->data->philos == 1)
 		ft_wait(philo->data->time_to_die);
 }

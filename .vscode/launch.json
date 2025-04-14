@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/javierzaragozatejeda/Philosophers_c",
-      "program": "/Users/javierzaragozatejeda/Philosophers_c/build/Debug/outDebug"
+      "cwd": "/home/jazarago/42Madrid/philosophers",
+      "program": "/home/jazarago/42Madrid/philosophers/build/Debug/outDebug"
     }
   ]
 }

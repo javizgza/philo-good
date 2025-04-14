@@ -14,7 +14,8 @@
 
 void	ft_start_philosophers(t_data *data, char **argv)
 {
-	ft_check_all_args(argv);
+	if (ft_check_all_args(argv) == 1)
+		exit(0);
 	data->philos = ft_mini_atoi(argv[1]);
 	data->time_to_die = ft_mini_atoi(argv[2]);
 	data->time_to_eat = ft_mini_atoi(argv[3]);
