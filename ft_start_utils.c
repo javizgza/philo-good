@@ -44,8 +44,16 @@ void	ft_death(t_philo *philos, t_data *data)
 		i = 0;
 		while (i < data->philos)
 		{
-			if ((ft_time() - philos[i].last_meal_time) > data->time_to_die)
+			if (philos->data->philos == 1)
+			{
+				ft_print(philos, "has taken a fork");
+				ft_wait(philos->data->time_to_die);
 				ft_died(&philos[i]);
+			}
+			if (((ft_time() - philos[i].last_meal_time) > data->time_to_die) && philos->data->philos != 1)
+			{
+				ft_died(&philos[i]);
+			}
 			if (philos[i].times_eaten >= data->number_of_times_eaten \
 				&& data->number_of_times_eaten != -1)
 				i++;

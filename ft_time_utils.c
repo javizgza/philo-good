@@ -25,6 +25,6 @@ void	ft_wait(int time)
 	long long	start;
 
 	start = ft_time();
-	while (ft_time() - start < time)
+	while ((ft_time() - start) < time)
 		usleep(150);
 }

@@ -62,7 +62,6 @@ void		ft_unlock(t_philo *philo);
 void		ft_step(t_philo *philo);
 void		ft_wait(int time);
 long long	ft_time(void);
-void		ft_wait(int time);
 int			ft_check_all_args(char **argv);
 int			ft_check_if_num(char *str);
 int			ft_mini_atoi(char *str);

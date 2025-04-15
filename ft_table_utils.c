@@ -31,16 +31,8 @@ void	ft_print(t_philo *philo, char *print)
 
 void	ft_order(t_philo *philo)
 {
-	if (philo->id & 1)
-	{
 		pthread_mutex_lock(philo->left_fork);
 		pthread_mutex_lock(philo->right_fork);
-	}
-	else
-	{
-		pthread_mutex_lock(philo->right_fork);
-		pthread_mutex_lock(philo->left_fork);
-	}
 }
 
 void	ft_unlock(t_philo *philo)
@@ -53,6 +45,8 @@ void	ft_step(t_philo *philo)
 {
 	philo->start_time = ft_time();
 	philo->last_meal_time = philo->start_time;
-	if (philo->data->philos == 1)
+	if (philo->philos == 1)
+	{
 		ft_wait(philo->data->time_to_die);
+	}
 }
