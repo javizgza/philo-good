@@ -33,6 +33,15 @@ void	ft_create_table(t_data *data)
 	}
 }
 
+void	ft_check_all_philosophers_ate(t_data *data, int i)
+{
+	if (i == data->philos)
+	{
+		data->value = 1;
+		exit(0);
+	}
+}
+
 void	ft_death(t_philo *philos, t_data *data)
 {
 	int	i;
@@ -50,18 +59,13 @@ void	ft_death(t_philo *philos, t_data *data)
 				ft_wait(philos->data->time_to_die);
 				ft_died(&philos[i]);
 			}
-			if (((ft_time() - philos[i].last_meal_time) > data->time_to_die) && philos->data->philos != 1)
-			{
+			if (((ft_time() - philos[i].last_meal_time) \
+				> data->time_to_die) && philos->data->philos != 1)
 				ft_died(&philos[i]);
-			}
 			if (philos[i].times_eaten >= data->number_of_times_eaten \
 				&& data->number_of_times_eaten != -1)
 				i++;
-			if (i == data->philos)
-			{
-				data->value = 1;
-				exit(0);
-			}
+			ft_check_all_philosophers_ate(data, i);
 		}
 	}
 }

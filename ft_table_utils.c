@@ -31,8 +31,8 @@ void	ft_print(t_philo *philo, char *print)
 
 void	ft_order(t_philo *philo)
 {
-		pthread_mutex_lock(philo->left_fork);
-		pthread_mutex_lock(philo->right_fork);
+	pthread_mutex_lock(philo->left_fork);
+	pthread_mutex_lock(philo->right_fork);
 }
 
 void	ft_unlock(t_philo *philo)
